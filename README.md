@@ -25,7 +25,6 @@ This portfolio was created to:
 
 ## How to View the Portfolio
 
-You can view the portfolio website live [here](#) (add your website link here).
 
 ## Projects Featured
 
