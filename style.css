@@ -1,110 +1,290 @@
-*When this is done the entire html file is styled*/
-*{
-    margin : 0;
-    padding : 0 ;
-}
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-html{
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-p{ 
-    color: rgb(85,85,85)
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-/*Transition*/
-a,
-.btn {
-    transition: all 300ms ease ;
+p {
+    color: rgb(85, 85, 85);
 }
 
-/*Desktop Nav*/
-nav,
-.nav-links {
+/* Transitions */
+a, .btn {
+    transition: all 300ms ease;
+}
+
+/* Desktop Nav */
+nav, .nav-links {
     display: flex;
     color: black;
 }
 
-nav{
+nav {
     justify-content: space-between;
-    align-items : center;
+    align-items: center;
     height: 12vh;
+    padding: 0 2rem;
 }
 
 .nav-links {
-    gap : 2rem;
+    gap: 2rem;
     list-style: none;
 }
 
-/* Fix for purple links - remove default link styling */
 .nav-links a {
     text-decoration: none;
     color: black;
 }
 
-a:hover{
+a:hover {
     color: grey;
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: rgb(181,181,181);
+    text-decoration-color: rgb(181, 181, 181);
 }
 
-/* Fixed logo selector - added the dot for class */
 .logo {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .logo:hover {
     color: grey;
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: rgb(181,181,181);
-}
-/*Hmaburger Menu*/
-
-#Hamburger {
-    position : relative;
-    display:inline-block;
-
+    text-decoration-color: rgb(181, 181, 181);
 }
 
-.hamburger-icon{
-    display:flex;
+/* Hamburger Menu */
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 24px;
-    width: 24px;
+    width: 30px;
     cursor: pointer;
 }
-.hamburger-icon span{
+
+.hamburger-icon span {
     width: 100%;
     height: 2px;
     background-color: black;
     transition: all 0.3s ease-in-out;
+    transform-origin: center;
 }
 
-.menu-links{
-    postion :absolute;
+.menu-links {
+    position: absolute;
     top: 100%;
-    right : 0;
+    right: 0;
     background-color: white;
-    width: fit-content;
+    width: 200px;
+    max-height: 0;
     overflow: hidden;
-    transition:all 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
-.menu-links a {
-    display:block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    transition: all;
+
+.menu-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-links li {
-    list-style : none
+    list-style: none;
 }
-.menu-links.open{
-    
+
+.menu-links a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.menu-links li:last-child a {
+    border-bottom: none;
+}
+
+/* Open state for menu */
+.menu-links.open {
+    max-height: 300px;
+}
+
+/* Hamburger animation when open */
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Placeholder content styling */
+.content {
+    padding: 2rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/*Section*/
+/* Profile Section */
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    height: 80vh;
+    margin: 0 10rem;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-weight: 600;
+}
+
+.section__text__p1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2 {
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover {
+    background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+    gap: 1rem;
+}
+
+/* Icons */
+.icon {
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+}
+
+/* Placeholder content styling */
+.content {
+    padding: 2rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #666;
 }

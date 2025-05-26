@@ -1,46 +1,90 @@
-<DOCTYPE html>
-    <html lang = "en">
-        <head>
-           
-            <link rel = "stylesheet" href = "style.css">
-            <meta charset = "UTF-8">
-            <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-            <link rel = stylesheet" href = "style.css">
-            <link rel="stylesheet" href="mediaqueries.css">
-            <link rel = "icon" href = "favicon.ico">
-            <title>Portfoilio</title>
-        </head>
-        <body>
-           <header>  
-                <!-- Navigation Bar -->
-   <nav id = "Desktop-Nav">
-    <div class = "logo" >Kamvelihle Dyantyi</div>
-    <div>
-            <ul class = "nav-links">
-               <li><a href = "#About ">About</a></li>
-                <li><a href = "#Experience">Experience<a></li>
-                <li><a href = "#Projects">Projects</a></li>
-                <li><a href = "#Contact">Contacts </a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id = "hamburger-nav">
-          <div class = "logo" >Kamvelihle Dyantyi</div>
-          <div class = "hamburger - menu">
-          <div class = "hamburger - icon" onclick = "toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-           </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="icon" href="favicon.ico">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <!-- Desktop Navigation Bar -->
+        <nav id="desktop-nav">
+            <div class="logo">Kamvelihle Dyantyi</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
 
-           <div class = "menu-links">
-                <li><a href = "#About" onclick= "toggleMenu()"></a>About</a></li>
-                <li><a href = "#Experience" onclick = "toggleMenu()"></a>Experience</a></li>
-                <li><a href = "#Projects" onclick= "toggleMenu()"></a>Projects</a></li>
-                <li><a href = "#Contact "onclick = "toggleMenu()"></a>Contact</a></li>
-           </div>
-          </div>
-    </nav>
-        </body>
-        <script src = "script.js"></script>
-    </html>
+        <!-- Hamburger Navigation -->
+        <nav id="hamburger-nav">
+            <div class="logo">Kamvelihle Dyantyi</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <ul>
+                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+<main>
+        <section id="profile">
+            <div class="section__pic-container">
+                <img src="Lion.jpg" alt="Profile picture of Kamvelihle Dyantyi"/>
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title">Kamvelihle Dyantyi</h1>
+                <p class="section__text__p2">Software Developer</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="window.open('./assets/resume.pdf')">
+                        Download CV
+                    </button>
+                    <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id="socials-container">
+                    <img 
+                        src="./assets/linkedin.png" 
+                        alt="My LinkedIn profile"
+                        class="icon" 
+                        onclick="location.href='https://linkedin.com/'"
+                    />
+                    <img 
+                        src="./assets/github.png" 
+                        alt="My Github profile"
+                        class="icon" 
+                        onclick="location.href='https://github.com/'"
+                    />
+                </div>
+            </div>
+        </section>
+    </main>
+        <div class="content">
+            <p>Your portfolio content goes here. Resize the window to test the hamburger menu!</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

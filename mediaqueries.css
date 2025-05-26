@@ -1,9 +1,73 @@
+/* Media Queries */
 @media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
+    #desktop-nav {
+        display: none;
+    }
+    
+    #hamburger-nav {
+        display: flex;
+    }
 }
 
+/* Additional responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    nav {
+        height: 10vh;
+        padding: 0 1rem;
+    }
+    
+    .menu-links {
+        width: 180px;
+    }
+    
+    .content {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .hamburger-icon {
+        width: 25px;
+        height: 20px;
+    }
+    
+    .menu-links {
+        width: 160px;
+    }
+    
+    .menu-links a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+#profile {
+        margin: 1rem;
+        gap: 1rem;
+    }
+    
+    .section__pic-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 10rem;
+    }
