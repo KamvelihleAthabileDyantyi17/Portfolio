@@ -93,3 +93,18 @@ a:hover{
     overflow: hidden;
     transition:all 0.3s ease-in-out;
 }
+.menu-links a {
+    display:block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    transition: all;
+}
+
+.menu-links li {
+    list-style : none
+}
+.menu-links.open{
+    
+}
