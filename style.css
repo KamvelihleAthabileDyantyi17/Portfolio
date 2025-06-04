@@ -35,36 +35,37 @@ nav,
 nav {
   justify-content: space-between;
   align-items: center;
-  height: 12vh;
+  height: 10vh; /* Reduced from 12vh */
   padding: 0 2rem;
 }
 
 .nav-links {
-  gap: 2rem;
+  gap: 1.5rem; /* Reduced from 2rem */
   list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
   color: black;
+  font-size: 1.1rem; /* Added for better readability */
 }
 
 a:hover {
   color: grey;
   text-decoration: underline;
-  text-underline-offset: 1rem;
+  text-underline-offset: 0.5rem; /* Reduced from 1rem */
   text-decoration-color: rgb(181, 181, 181);
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.8rem; /* Reduced from 2rem */
   cursor: pointer;
 }
 
 .logo:hover {
   color: grey;
   text-decoration: underline;
-  text-underline-offset: 1rem;
+  text-underline-offset: 0.5rem; /* Reduced from 1rem */
   text-decoration-color: rgb(181, 181, 181);
 }
 
@@ -121,7 +122,7 @@ a:hover {
 
 .menu-links a {
   display: block;
-  padding: 15px 20px;
+  padding: 12px 16px; /* Reduced padding */
   text-decoration: none;
   color: black;
   text-align: left;
@@ -170,12 +171,11 @@ a:hover {
 /*Section*/
 /* Profile Section */
 #profile {
-  padding: 6vh 10rem;
-  min-height: 200vh;
+  padding: 4vh 8rem; /* Reduced from 6vh 10rem */
+  min-height: 90vh; /* Reduced from 200vh */
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  
 }
 
 /* Picture Container */
@@ -183,8 +183,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  width: 280px; /* Slightly reduced from 300px */
+  height: 280px; /* Slightly reduced from 300px */
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -204,6 +204,7 @@ a:hover {
   object-fit: cover;
   border-radius: 20%;
 }
+
 /* Text Section */
 section#profile {
   display: flex;
@@ -213,15 +214,15 @@ section#profile {
 
 .section__text p {
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem; /* Reduced from 1rem */
   line-height: 1.6;
   color: #333;
 }
 
 .section__text__p1 {
-  font-size: 1.75rem;
+  font-size: 1.5rem; /* Reduced from 1.75rem */
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem; /* Reduced from 1rem */
   color: #666;
   font-weight: 500;
 }
@@ -229,16 +230,16 @@ section#profile {
 .section__text__p2 {
   font-size: 1.1rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
   color: #555;
   line-height: 1.7;
 }
 
 /* Title */
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Reduced from 3rem */
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
   font-weight: 700;
   color: #222;
   line-height: 1.2;
@@ -246,11 +247,20 @@ section#profile {
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced from 2.5rem */
   }
 
   .section__text__p1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Reduced from 1.5rem */
+  }
+  
+  #profile {
+    padding: 3vh 4rem; /* Reduced mobile padding */
+  }
+  
+  .section__pic-container {
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -258,19 +268,19 @@ section#profile {
 #socials-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  gap: 1.5rem;
+  margin-top: 1.5rem; /* Reduced from 2rem */
+  gap: 1.2rem; /* Reduced from 1.5rem */
   flex-wrap: wrap;
 }
 
 /* Icons */
 .icon {
   cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.8rem; /* Increased from 2.5rem */
+  width: 2.8rem; /* Increased from 2.5rem */
   transition: all 0.3s ease;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.6rem; /* Increased from 0.5rem */
   background-color: #f8f9fa;
   border: 2px solid transparent;
 }
@@ -287,18 +297,18 @@ section#profile {
   transform: translateY(-1px);
 }
 
-/* Button Styles (if needed) */
+/* Button Styles */
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem; /* Reduced from 2rem */
   flex-wrap: wrap;
 }
 
 .btn {
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.8rem; /* Slightly reduced padding */
   border-radius: 2rem;
   border: 2px solid #333;
   background: none;
@@ -308,7 +318,8 @@ section#profile {
   text-decoration: none;
   display: inline-block;
   text-align: center;
-  min-width: 150px;
+  min-width: 140px; /* Reduced from 150px */
+  font-size: 1rem; /* Added for consistency */
 }
 
 .btn:hover {
@@ -360,5 +371,30 @@ section#profile {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Additional responsive improvements */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 1.2rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  
+  .section__pic-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .icon {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }

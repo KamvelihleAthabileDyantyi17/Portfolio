@@ -88,3 +88,52 @@
         text-align: center;
     }
 }
+/* Additional Utility Classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Additional responsive improvements */
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 1.2rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  
+  .section__pic-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
