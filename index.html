@@ -1,817 +1,1031 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamvelihle Athabile Dyantyi — Software Developer & Cloud Enthusiast</title>
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #0A1220;
-    --bg-panel: #111B2E;
-    --bg-panel-2: #16213A;
-    --text-primary: #E7ECF5;
-    --text-secondary: #8C9AB5;
-    --text-tertiary: #5E6E8C;
-    --accent-teal: #4FD8C4;
-    --accent-teal-dim: rgba(79,216,196,0.14);
-    --accent-amber: #F0A857;
-    --accent-amber-dim: rgba(240,168,87,0.14);
-    --border: rgba(255,255,255,0.08);
-    --border-strong: rgba(255,255,255,0.14);
-    --radius: 10px;
-    --maxw: 1120px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamvelihle Athabile Dyantyi — Software Developer & Cloud Enthusiast</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A1220;
+      --bg-panel: #111B2E;
+      --bg-panel-2: #16213A;
+      --text-primary: #E7ECF5;
+      --text-secondary: #8C9AB5;
+      --text-tertiary: #5E6E8C;
+      --accent-teal: #4FD8C4;
+      --accent-teal-dim: rgba(79, 216, 196, 0.14);
+      --accent-amber: #F0A857;
+      --accent-amber-dim: rgba(240, 168, 87, 0.14);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --radius: 10px;
+      --maxw: 1120px;
+    }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+    * {
+      box-sizing: border-box;
+    }
 
-  body{
-    margin:0;
-    background:
-      radial-gradient(1100px 600px at 85% -10%, rgba(79,216,196,0.07), transparent 60%),
-      radial-gradient(900px 500px at -10% 20%, rgba(240,168,87,0.05), transparent 55%),
-      var(--bg);
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  ::selection{ background: var(--accent-teal); color: #06110F; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1100px 600px at 85% -10%, rgba(79, 216, 196, 0.07), transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, rgba(240, 168, 87, 0.05), transparent 55%),
+        var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  a{ color: inherit; }
+    ::selection {
+      background: var(--accent-teal);
+      color: #06110F;
+    }
 
-  :focus-visible{
-    outline: 2px solid var(--accent-teal);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
+    a {
+      color: inherit;
+    }
 
-  h1,h2,h3{
-    font-family: 'Space Grotesk', sans-serif;
-    margin: 0;
-    letter-spacing: -0.01em;
-  }
+    :focus-visible {
+      outline: 2px solid var(--accent-teal);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
 
-  .mono{
-    font-family: 'IBM Plex Mono', monospace;
-  }
+    h1,
+    h2,
+    h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
 
-  .wrap{
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
 
-  /* ---------- NAV ---------- */
-  header.site-nav{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    backdrop-filter: blur(10px);
-    background: rgba(10,18,32,0.72);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 16px 28px;
-    max-width: var(--maxw);
-    margin: 0 auto;
-  }
-  .logo{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    text-decoration:none;
-  }
-  .logo .dot{
-    width:8px;height:8px;border-radius:50%;
-    background: var(--accent-teal);
-    box-shadow: 0 0 10px var(--accent-teal);
-  }
-  nav.links{
-    display:flex;
-    gap: 28px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-  }
-  nav.links a{
-    text-decoration:none;
-    transition: color .2s ease;
-    position:relative;
-    padding: 4px 0;
-  }
-  nav.links a:hover{ color: var(--text-primary); }
-  @media (max-width: 720px){
-    nav.links{ display:none; }
-  }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding: 88px 0 64px;
-    display:grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 48px;
-    align-items:center;
-  }
-  @media (max-width: 900px){
-    .hero{ grid-template-columns: 1fr; padding-top: 56px; }
-  }
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent-teal);
-    background: var(--accent-teal-dim);
-    border: 1px solid rgba(79,216,196,0.25);
-    padding: 6px 12px;
-    border-radius: 999px;
-    margin-bottom: 22px;
-  }
-  .eyebrow::before{
-    content:'';
-    width:6px;height:6px;border-radius:50%;
-    background: var(--accent-teal);
-  }
-  .hero h1{
-    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.08;
-    margin-bottom: 18px;
-  }
-  .hero .role{
-    font-family:'IBM Plex Mono', monospace;
-    color: var(--accent-amber);
-    font-size: 1.05rem;
-    margin-bottom: 20px;
-    display:block;
-  }
-  .hero p.lede{
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    max-width: 46ch;
-    margin-bottom: 32px;
-  }
-  .cta-row{
-    display:flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 0.92rem;
-    font-weight: 600;
-    text-decoration:none;
-    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    border: 1px solid transparent;
-  }
-  .btn-primary{
-    background: var(--accent-teal);
-    color: #06110F;
-  }
-  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,216,196,0.25); }
-  .btn-ghost{
-    background: transparent;
-    color: var(--text-primary);
-    border-color: var(--border-strong);
-  }
-  .btn-ghost:hover{ border-color: var(--accent-teal); color: var(--accent-teal); transform: translateY(-2px); }
+    /* ---------- NAV ---------- */
+    header.site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(10, 18, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
 
-  /* ---------- SIGNATURE DIAGRAM ---------- */
-  .diagram-wrap{
-    position:relative;
-    background: linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px;
-  }
-  .diagram-wrap svg{ width:100%; height:auto; display:block; }
-  .diagram-caption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text-tertiary);
-    text-align:center;
-    margin-top: 10px;
-    letter-spacing: 0.03em;
-  }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 28px;
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
 
-  .pulse-dot{ animation: none; }
-  @media (prefers-reduced-motion: no-preference){
-    .flow-line{ stroke-dasharray: 6 7; animation: dash 3.2s linear infinite; }
-    @keyframes dash{ to{ stroke-dashoffset: -130; } }
-  }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
 
-  /* ---------- SECTION SCAFFOLDING ---------- */
-  section{ padding: 76px 0; }
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-  .section-tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent-teal);
-    white-space: nowrap;
-  }
-  .section-head h2{
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
-  }
-  .section-rule{
-    flex:1;
-    height:1px;
-    background: linear-gradient(90deg, var(--border-strong), transparent);
-  }
+    .logo .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+      box-shadow: 0 0 10px var(--accent-teal);
+    }
 
-  /* ---------- ABOUT ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 40px;
-  }
-  @media (max-width: 800px){ .about-grid{ grid-template-columns: 1fr; } }
-  .about-body p{ color: var(--text-secondary); margin: 0 0 16px; }
-  .about-body strong{ color: var(--text-primary); font-weight:600; }
-  .quote-card{
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent-amber);
-    border-radius: 8px;
-    padding: 22px 24px;
-    font-family:'Space Grotesk', sans-serif;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    align-self:start;
-  }
-  .quote-card span{
-    display:block;
-    margin-top: 12px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-tertiary);
-  }
+    nav.links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
 
-  /* ---------- SKILLS ---------- */
-  .skill-stack{
-    display:flex;
-    flex-direction:column;
-    gap: 14px;
-  }
-  .skill-row{
-    display:grid;
-    grid-template-columns: 170px 1fr;
-    gap: 18px;
-    align-items:center;
-    padding: 16px 20px;
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-  }
-  @media (max-width: 640px){
-    .skill-row{ grid-template-columns: 1fr; gap: 10px; }
-  }
-  .skill-label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  .skill-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap: 8px;
-  }
-  .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.82rem;
-    padding: 5px 11px;
-    border-radius: 6px;
-    background: var(--bg-panel-2);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-  }
-  .skill-row:nth-child(4) .tag{
-    background: var(--accent-teal-dim);
-    border-color: rgba(79,216,196,0.3);
-    color: var(--accent-teal);
-  }
+    nav.links a {
+      text-decoration: none;
+      transition: color .2s ease;
+      position: relative;
+      padding: 4px 0;
+    }
 
-  /* ---------- PROJECTS ---------- */
-  .project-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  .project-card{
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px;
-    display:flex;
-    flex-direction:column;
-    transition: border-color .2s ease, transform .2s ease;
-  }
-  .project-card:hover{
-    border-color: var(--border-strong);
-    transform: translateY(-3px);
-  }
-  .project-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom: 10px;
-  }
-  .project-name{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 1.08rem;
-  }
-  .status{
-    display:flex;
-    align-items:center;
-    gap: 6px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--accent-teal);
-  }
-  .status .dot{
-    width:6px;height:6px;border-radius:50%;
-    background: var(--accent-teal);
-    box-shadow: 0 0 8px var(--accent-teal);
-  }
-  .project-type{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
-  }
-  .project-desc{
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    margin-bottom: 18px;
-    flex:1;
-  }
-  .project-stack{
-    display:flex;
-    flex-wrap:wrap;
-    gap: 6px;
-    margin-bottom: 18px;
-  }
-  .project-stack .tag{
-    font-size: 0.72rem;
-    padding: 3px 9px;
-  }
-  .project-link{
-    display:inline-flex;
-    align-items:center;
-    gap: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-amber);
-    text-decoration:none;
-    align-self:flex-start;
-  }
-  .project-link:hover{ color: var(--accent-teal); }
-  .project-link svg{ width:14px; height:14px; }
+    nav.links a:hover {
+      color: var(--text-primary);
+    }
 
-  /* ---------- CERTIFICATIONS ---------- */
-  .timeline{
-    position:relative;
-    padding-left: 28px;
-  }
-  .timeline::before{
-    content:'';
-    position:absolute;
-    left: 5px; top: 6px; bottom: 6px;
-    width: 1px;
-    background: var(--border-strong);
-  }
-  .cert{
-    position:relative;
-    padding-bottom: 34px;
-  }
-  .cert:last-child{ padding-bottom: 0; }
-  .cert::before{
-    content:'';
-    position:absolute;
-    left: -28px; top: 4px;
-    width: 11px; height: 11px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--accent-teal);
-  }
-  .cert-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .cert-name{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-  }
-  .cert-date{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.76rem;
-    color: var(--accent-amber);
-  }
-  .cert-issuer{
-    font-size: 0.85rem;
-    color: var(--text-tertiary);
-    margin-bottom: 8px;
-  }
-  .cert-issuer .ref{
-    font-family:'IBM Plex Mono', monospace;
-    color: var(--text-tertiary);
-  }
-  .cert-learn{
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    max-width: 68ch;
-  }
+    @media (max-width: 720px) {
+      nav.links {
+        display: none;
+      }
+    }
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  footer{
-    border-top: 1px solid var(--border);
-    padding: 56px 0 40px;
-  }
-  .contact-grid{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    flex-wrap:wrap;
-    gap: 28px;
-  }
-  .contact-grid h2{ font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 10px; }
-  .contact-grid p{ color: var(--text-secondary); max-width: 44ch; }
-  .social-list{
-    display:flex;
-    flex-direction:column;
-    gap: 12px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.9rem;
-  }
-  .social-list a{
-    text-decoration:none;
-    color: var(--text-primary);
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .social-list a:hover{ color: var(--accent-teal); }
-  .social-list .label{ color: var(--text-tertiary); width: 78px; display:inline-block; }
-  .foot-note{
-    margin-top: 48px;
-    color: var(--text-tertiary);
-    font-size: 0.78rem;
-    font-family:'IBM Plex Mono', monospace;
-  }
-</style>
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 88px 0 64px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 56px;
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-teal);
+      background: var(--accent-teal-dim);
+      border: 1px solid rgba(79, 216, 196, 0.25);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+
+    .hero .role {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--accent-amber);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .hero p.lede {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 46ch;
+      margin-bottom: 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent-teal);
+      color: #06110F;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(79, 216, 196, 0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-teal);
+      color: var(--accent-teal);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- SIGNATURE DIAGRAM ---------- */
+    .diagram-wrap {
+      position: relative;
+      background: linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .diagram-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .diagram-caption {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .pulse-dot {
+      animation: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .flow-line {
+        stroke-dasharray: 6 7;
+        animation: dash 3.2s linear infinite;
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -130;
+        }
+      }
+    }
+
+    /* ---------- SECTION SCAFFOLDING ---------- */
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .section-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-teal);
+      white-space: nowrap;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-strong), transparent);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-body p {
+      color: var(--text-secondary);
+      margin: 0 0 16px;
+    }
+
+    .about-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .quote-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-amber);
+      border-radius: 8px;
+      padding: 22px 24px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      align-self: start;
+    }
+
+    .quote-card span {
+      display: block;
+      margin-top: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skill-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 20px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .skill-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    .skill-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      padding: 5px 11px;
+      border-radius: 6px;
+      background: var(--bg-panel-2);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    .skill-row:nth-child(4) .tag {
+      background: var(--accent-teal-dim);
+      border-color: rgba(79, 216, 196, 0.3);
+      color: var(--accent-teal);
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color .2s ease, transform .2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-3px);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .project-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.08rem;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent-teal);
+    }
+
+    .status .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+      box-shadow: 0 0 8px var(--accent-teal);
+    }
+
+    .project-type {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .project-stack .tag {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-amber);
+      text-decoration: none;
+      align-self: flex-start;
+    }
+
+    .project-link:hover {
+      color: var(--accent-teal);
+    }
+
+    .project-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--border-strong);
+    }
+
+    .cert {
+      position: relative;
+      padding-bottom: 34px;
+    }
+
+    .cert:last-child {
+      padding-bottom: 0;
+    }
+
+    .cert::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent-teal);
+    }
+
+    .cert-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .cert-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .cert-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--accent-amber);
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+
+    .cert-issuer .ref {
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--text-tertiary);
+    }
+
+    .cert-learn {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      max-width: 68ch;
+    }
+
+    /* ---------- CONTACT / FOOTER ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 56px 0 40px;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .contact-grid h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 10px;
+    }
+
+    .contact-grid p {
+      color: var(--text-secondary);
+      max-width: 44ch;
+    }
+
+    .social-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    .social-list a {
+      text-decoration: none;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-list a:hover {
+      color: var(--accent-teal);
+    }
+
+    .social-list .label {
+      color: var(--text-tertiary);
+      width: 78px;
+      display: inline-block;
+    }
+
+    .foot-note {
+      margin-top: 48px;
+      color: var(--text-tertiary);
+      font-size: 0.78rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a href="#top" class="logo"><span class="dot"></span>KAD</a>
-    <nav class="links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
-  <div class="wrap">
-
-    <!-- HERO -->
-    <section class="hero" style="padding-top:88px;">
-      <div>
-        <span class="eyebrow">Final-year IT student · Rosebank College</span>
-        <h1>Kamvelihle Athabile Dyantyi</h1>
-        <span class="role">Software Developer &amp; Cloud Enthusiast</span>
-        <p class="lede">I build tools that solve real problems — from offline-first budgeting apps to automated cybersecurity assistants — while mastering the cloud infrastructure that keeps them running at scale.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/KamvelihleAthabileDyantyi17" target="_blank" rel="noopener">View GitHub</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-        </div>
-      </div>
-
-      <div class="diagram-wrap">
-        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing code, cloud, and AI connected as one system">
-          <!-- connecting lines -->
-          <path class="flow-line" d="M240 190 L120 100" stroke="#4FD8C4" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path class="flow-line" d="M240 190 L360 100" stroke="#4FD8C4" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path class="flow-line" d="M240 190 L240 300" stroke="#4FD8C4" stroke-width="1.5" fill="none" opacity="0.55"/>
-          <path class="flow-line" d="M120 100 L60 170" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-          <path class="flow-line" d="M120 100 L120 40" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-          <path class="flow-line" d="M360 100 L420 170" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-          <path class="flow-line" d="M360 100 L360 40" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-          <path class="flow-line" d="M240 300 L180 350" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-          <path class="flow-line" d="M240 300 L300 350" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4"/>
-
-          <!-- satellite nodes -->
-          <circle cx="60" cy="170" r="4" fill="#8C9AB5"/>
-          <circle cx="120" cy="40" r="4" fill="#8C9AB5"/>
-          <circle cx="420" cy="170" r="4" fill="#8C9AB5"/>
-          <circle cx="360" cy="40" r="4" fill="#8C9AB5"/>
-          <circle cx="180" cy="350" r="4" fill="#8C9AB5"/>
-          <circle cx="300" cy="350" r="4" fill="#8C9AB5"/>
-
-          <!-- hub nodes -->
-          <circle cx="120" cy="100" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5"/>
-          <text x="120" y="96" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace" font-size="10">FULL</text>
-          <text x="120" y="108" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace" font-size="10">STACK</text>
-
-          <circle cx="360" cy="100" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5"/>
-          <text x="360" y="104" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace" font-size="10">CLOUD</text>
-
-          <circle cx="240" cy="300" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5"/>
-          <text x="240" y="304" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace" font-size="10">AI</text>
-
-          <circle cx="240" cy="190" r="22" fill="#F0A857" opacity="0.15" stroke="#F0A857" stroke-width="1.5"/>
-          <text x="240" y="187" text-anchor="middle" fill="#F0A857" font-family="IBM Plex Mono, monospace" font-size="9">PRACTICAL</text>
-          <text x="240" y="198" text-anchor="middle" fill="#F0A857" font-family="IBM Plex Mono, monospace" font-size="9">INNOVATION</text>
-
-          <!-- traveling pulses -->
-          <circle r="3" fill="#4FD8C4">
-            <animateMotion dur="3.4s" repeatCount="indefinite" path="M240 190 L120 100"/>
-          </circle>
-          <circle r="3" fill="#4FD8C4">
-            <animateMotion dur="3.8s" begin="0.6s" repeatCount="indefinite" path="M240 190 L360 100"/>
-          </circle>
-          <circle r="3" fill="#4FD8C4">
-            <animateMotion dur="3.1s" begin="1.1s" repeatCount="indefinite" path="M240 190 L240 300"/>
-          </circle>
-        </svg>
-        <p class="diagram-caption">// bridging high-level code and efficient cloud operations</p>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-head">
-        <span class="section-tag">01 — about</span>
-        <div class="section-rule"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-body">
-          <p>I'm a final-year IT student at Rosebank College with a deep-seated passion for building robust, user-centric applications and exploring the frontiers of Cloud Computing and Artificial Intelligence.</p>
-          <p>My development philosophy centres on <strong>Practical Innovation</strong> — creating tools that solve real problems, from offline-first mobile budgeting to automated cybersecurity assistants.</p>
-          <p>Currently, I'm leveraging my foundations in Full-Stack development to master cloud infrastructure on Oracle and Azure, aiming to build scalable systems that bridge the gap between high-level code and efficient operations.</p>
-        </div>
-        <div class="quote-card">
-          "Build tools that solve real problems — then make sure they run anywhere."
-          <span>— development philosophy</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-head">
-        <span class="section-tag">02 — skill ecosystem</span>
-        <div class="section-rule"></div>
-      </div>
-      <div class="skill-stack">
-        <div class="skill-row">
-          <span class="skill-label">Languages</span>
-          <div class="skill-tags">
-            <span class="tag">C#</span><span class="tag">Java</span><span class="tag">Kotlin</span>
-            <span class="tag">PHP</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
-            <span class="tag">JavaScript (ES6+)</span><span class="tag">Python</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">Frameworks</span>
-          <div class="skill-tags">
-            <span class="tag">WPF</span><span class="tag">.NET</span><span class="tag">Bootstrap</span><span class="tag">Tailwind CSS</span><span class="tag">RoomDB</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">Databases</span>
-          <div class="skill-tags">
-            <span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">Firestore</span>
-          </div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">Cloud &amp; AI</span>
-          <div class="skill-tags">
-            <span class="tag">Oracle Cloud Infrastructure</span><span class="tag">Microsoft Azure AI</span>
-            <span class="tag">Prompt Engineering</span><span class="tag">NLP</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-head">
-        <span class="section-tag">03 — featured projects</span>
-        <div class="section-rule"></div>
-      </div>
-      <div class="project-grid">
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Stashed</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">Mobile · Android</span>
-          <p class="project-desc">An offline-first mobile budget planner. Users manage finances without internet connectivity, syncing seamlessly to the cloud once a connection is re-established.</p>
-          <div class="project-stack">
-            <span class="tag">Kotlin</span><span class="tag">RoomDB</span><span class="tag">Firebase</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Stashed.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Pastimes</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">Full-Stack · Web</span>
-          <p class="project-desc">A professional e-commerce platform for a second-hand clothing store, with secure user authentication, product catalogs, and inventory management.</p>
-          <div class="project-stack">
-            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Pastimes.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Contract Monthly Claim System</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">Desktop Application</span>
-          <p class="project-desc">A high-utility system designed to automate and streamline the submission and approval process for contractor claims.</p>
-          <div class="project-stack">
-            <span class="tag">C#</span><span class="tag">WPF</span><span class="tag">SQL Server</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Contract-Monthly-Claim-Syatem.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Cybersecurity AI Bot</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">AI · Python</span>
-          <p class="project-desc">An intelligent chatbot that provides real-time guidance on cybersecurity best practices and helps users troubleshoot common security queries.</p>
-          <div class="project-stack">
-            <span class="tag">Python</span><span class="tag">AI / NLP</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/CyberSecurityChatBot.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Lecturer System</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">Desktop Management</span>
-          <p class="project-desc">An administrative tool built to manage academic staff data, scheduling, and departmental organisation.</p>
-          <div class="project-stack">
-            <span class="tag">C#</span><span class="tag">.NET</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Lecturer-system.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-name">Garden</span>
-            <span class="status"><span class="dot"></span>deployed</span>
-          </div>
-          <span class="project-type">Web Application</span>
-          <p class="project-desc">A web-based tracking application focused on environmental data and plant management logistics.</p>
-          <div class="project-stack">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-          </div>
-          <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Garden.git" target="_blank" rel="noopener">
-            View repository
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certs">
-      <div class="section-head">
-        <span class="section-tag">04 — verified credentials</span>
-        <div class="section-rule"></div>
-      </div>
-      <div class="timeline">
-
-        <div class="cert">
-          <div class="cert-head">
-            <span class="cert-name">Google AI Essentials V1</span>
-            <span class="cert-date">JUL 2026</span>
-          </div>
-          <div class="cert-issuer">Google / Coursera · <span class="ref">GoogleAIEssentialsV1_Badge20260727-21-e6w1ko.pdf</span></div>
-          <p class="cert-learn">Developed advanced prompt engineering techniques and learned how to integrate AI tools into professional workflows to maximise productivity and ethical AI usage.</p>
-        </div>
-
-        <div class="cert">
-          <div class="cert-head">
-            <span class="cert-name">Claude 101</span>
-            <span class="cert-date">2026</span>
-          </div>
-          <div class="cert-issuer">Anthropic · <span class="ref">Claude101.pdf</span></div>
-          <p class="cert-learn">Explored the unique capabilities of the Claude model, focusing on complex reasoning tasks and leveraging large context windows for software documentation and debugging.</p>
-        </div>
-
-        <div class="cert">
-          <div class="cert-head">
-            <span class="cert-name">Microsoft Certified: Azure AI Fundamentals</span>
-            <span class="cert-date">APR 2026</span>
-          </div>
-          <div class="cert-issuer">Microsoft · <span class="ref">AI900.png</span></div>
-          <p class="cert-learn">Mastered the basics of Machine Learning, Computer Vision, and Natural Language Processing on the Azure platform, with the ability to design and implement AI workloads using cloud-native services.</p>
-        </div>
-
-        <div class="cert">
-          <div class="cert-head">
-            <span class="cert-name">Oracle Cloud Infrastructure Foundations Associate</span>
-            <span class="cert-date">FEB 2026</span>
-          </div>
-          <div class="cert-issuer">Oracle University · <span class="ref">OCI.pdf</span></div>
-          <p class="cert-learn">Gained a deep understanding of core cloud concepts, including Virtual Cloud Networks (VCN), Identity and Access Management (IAM), and the architectural differences between Compute, Storage, and Autonomous Databases.</p>
-        </div>
-
-        <div class="cert">
-          <div class="cert-head">
-            <span class="cert-name">Certificate in Full Stack Development</span>
-            <span class="cert-date">2025</span>
-          </div>
-          <div class="cert-issuer">FNB App Academy / IT Varsity · <span class="ref">FNB Cert_page-0001.pdf</span></div>
-          <p class="cert-learn">Completed a rigorous 32-credit program covering the entire SDLC, UX/UI design principles, API development, and business development for software startups.</p>
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-
-  <!-- CONTACT -->
-  <footer id="contact">
-    <div class="wrap">
-      <div class="contact-grid">
-        <div>
-          <h2>Let's build something.</h2>
-          <p>Open to opportunities in software development, cloud engineering, and applied AI. Reach out below.</p>
-        </div>
-        <div class="social-list">
-          <a href="https://github.com/KamvelihleAthabileDyantyi17" target="_blank" rel="noopener"><span class="label">GitHub</span> KamvelihleAthabileDyantyi17</a>
-          <a href="https://www.linkedin.com/in/kamvelihle-dyantyi-dev" target="_blank" rel="noopener"><span class="label">LinkedIn</span> www.linkedin.com/in/kamvelihle-dyantyi-dev</a>
-          <a href="mailto:kdyntyi@gmail.com" target="_blank" rel="noopener"><span class="label">Email</span> kdyntyi@gmail.com</a>
-        </div>
-      </div>
-      <p class="foot-note">// Kamvelihle Athabile Dyantyi — Software Developer &amp; Cloud Enthusiast</p>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo"><span class="dot"></span>KAD</a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </footer>
-</main>
+  </header>
+
+  <main id="top">
+    <div class="wrap">
+
+      <!-- HERO -->
+      <section class="hero" style="padding-top:88px;">
+        <div>
+          <span class="eyebrow">Final-year IT student · Rosebank College</span>
+          <h1>Kamvelihle Athabile Dyantyi</h1>
+          <span class="role">Software Developer &amp; Cloud Enthusiast</span>
+          <p class="lede">I build tools that solve real problems — from offline-first budgeting apps to automated
+            cybersecurity assistants — while mastering the cloud infrastructure that keeps them running at scale.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/KamvelihleAthabileDyantyi17" target="_blank"
+              rel="noopener">View GitHub</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img"
+            aria-label="Diagram showing code, cloud, and AI connected as one system">
+            <!-- connecting lines -->
+            <path class="flow-line" d="M240 190 L120 100" stroke="#4FD8C4" stroke-width="1.5" fill="none"
+              opacity="0.55" />
+            <path class="flow-line" d="M240 190 L360 100" stroke="#4FD8C4" stroke-width="1.5" fill="none"
+              opacity="0.55" />
+            <path class="flow-line" d="M240 190 L240 300" stroke="#4FD8C4" stroke-width="1.5" fill="none"
+              opacity="0.55" />
+            <path class="flow-line" d="M120 100 L60 170" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+            <path class="flow-line" d="M120 100 L120 40" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+            <path class="flow-line" d="M360 100 L420 170" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+            <path class="flow-line" d="M360 100 L360 40" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+            <path class="flow-line" d="M240 300 L180 350" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+            <path class="flow-line" d="M240 300 L300 350" stroke="#5E6E8C" stroke-width="1" fill="none" opacity="0.4" />
+
+            <!-- satellite nodes -->
+            <circle cx="60" cy="170" r="4" fill="#8C9AB5" />
+            <circle cx="120" cy="40" r="4" fill="#8C9AB5" />
+            <circle cx="420" cy="170" r="4" fill="#8C9AB5" />
+            <circle cx="360" cy="40" r="4" fill="#8C9AB5" />
+            <circle cx="180" cy="350" r="4" fill="#8C9AB5" />
+            <circle cx="300" cy="350" r="4" fill="#8C9AB5" />
+
+            <!-- hub nodes -->
+            <circle cx="120" cy="100" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5" />
+            <text x="120" y="96" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace"
+              font-size="10">FULL</text>
+            <text x="120" y="108" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace"
+              font-size="10">STACK</text>
+
+            <circle cx="360" cy="100" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5" />
+            <text x="360" y="104" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace"
+              font-size="10">CLOUD</text>
+
+            <circle cx="240" cy="300" r="30" fill="#16213A" stroke="#4FD8C4" stroke-width="1.5" />
+            <text x="240" y="304" text-anchor="middle" fill="#E7ECF5" font-family="IBM Plex Mono, monospace"
+              font-size="10">AI</text>
+
+            <circle cx="240" cy="190" r="22" fill="#F0A857" opacity="0.15" stroke="#F0A857" stroke-width="1.5" />
+            <text x="240" y="187" text-anchor="middle" fill="#F0A857" font-family="IBM Plex Mono, monospace"
+              font-size="9">PRACTICAL</text>
+            <text x="240" y="198" text-anchor="middle" fill="#F0A857" font-family="IBM Plex Mono, monospace"
+              font-size="9">INNOVATION</text>
+
+            <!-- traveling pulses -->
+            <circle r="3" fill="#4FD8C4">
+              <animateMotion dur="3.4s" repeatCount="indefinite" path="M240 190 L120 100" />
+            </circle>
+            <circle r="3" fill="#4FD8C4">
+              <animateMotion dur="3.8s" begin="0.6s" repeatCount="indefinite" path="M240 190 L360 100" />
+            </circle>
+            <circle r="3" fill="#4FD8C4">
+              <animateMotion dur="3.1s" begin="1.1s" repeatCount="indefinite" path="M240 190 L240 300" />
+            </circle>
+          </svg>
+          <p class="diagram-caption">// bridging high-level code and efficient cloud operations</p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-head">
+          <span class="section-tag">01 — about</span>
+          <div class="section-rule"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-body">
+            <p>I'm a final-year IT student at Rosebank College with a deep-seated passion for building robust,
+              user-centric applications and exploring the frontiers of Cloud Computing and Artificial Intelligence.</p>
+            <p>My development philosophy centres on <strong>Practical Innovation</strong> — creating tools that solve
+              real problems, from offline-first mobile budgeting to automated cybersecurity assistants.</p>
+            <p>Currently, I'm leveraging my foundations in Full-Stack development to master cloud infrastructure on
+              Oracle and Azure, aiming to build scalable systems that bridge the gap between high-level code and
+              efficient operations.</p>
+          </div>
+          <div class="quote-card">
+            "Build tools that solve real problems — then make sure they run anywhere."
+            <span>— development philosophy</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-head">
+          <span class="section-tag">02 — skill ecosystem</span>
+          <div class="section-rule"></div>
+        </div>
+        <div class="skill-stack">
+          <div class="skill-row">
+            <span class="skill-label">Languages</span>
+            <div class="skill-tags">
+              <span class="tag">C#</span><span class="tag">Java</span><span class="tag">Kotlin</span>
+              <span class="tag">PHP</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
+              <span class="tag">JavaScript (ES6+)</span><span class="tag">Python</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Frameworks</span>
+            <div class="skill-tags">
+              <span class="tag">WPF</span><span class="tag">.NET</span><span class="tag">Bootstrap</span><span
+                class="tag">Tailwind CSS</span><span class="tag">RoomDB</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Databases</span>
+            <div class="skill-tags">
+              <span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span
+                class="tag">Firestore</span>
+            </div>
+          </div>
+          <div class="skill-row">
+            <span class="skill-label">Cloud &amp; AI</span>
+            <div class="skill-tags">
+              <span class="tag">Oracle Cloud Infrastructure</span><span class="tag">Microsoft Azure AI</span>
+              <span class="tag">Prompt Engineering</span><span class="tag">NLP</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-head">
+          <span class="section-tag">03 — featured projects</span>
+          <div class="section-rule"></div>
+        </div>
+        <div class="project-grid">
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Stashed</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">Mobile · Android</span>
+            <p class="project-desc">An offline-first mobile budget planner. Users manage finances without internet
+              connectivity, syncing seamlessly to the cloud once a connection is re-established.</p>
+            <div class="project-stack">
+              <span class="tag">Kotlin</span><span class="tag">RoomDB</span><span class="tag">Firebase</span>
+            </div>
+            <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Stashed.git" target="_blank"
+              rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Pastimes</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">Full-Stack · Web</span>
+            <p class="project-desc">A professional e-commerce platform for a second-hand clothing store, with secure
+              user authentication, product catalogs, and inventory management.</p>
+            <div class="project-stack">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
+            </div>
+            <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Pastimes.git" target="_blank"
+              rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Contract Monthly Claim System</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">Desktop Application</span>
+            <p class="project-desc">A high-utility system designed to automate and streamline the submission and
+              approval process for contractor claims.</p>
+            <div class="project-stack">
+              <span class="tag">C#</span><span class="tag">WPF</span><span class="tag">SQL Server</span>
+            </div>
+            <a class="project-link"
+              href="https://github.com/KamvelihleAthabileDyantyi17/Contract-Monthly-Claim-Syatem.git" target="_blank"
+              rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Cybersecurity AI Bot</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">AI · Python</span>
+            <p class="project-desc">An intelligent chatbot that provides real-time guidance on cybersecurity best
+              practices and helps users troubleshoot common security queries.</p>
+            <div class="project-stack">
+              <span class="tag">Python</span><span class="tag">AI / NLP</span>
+            </div>
+            <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/CyberSecurityChatBot.git"
+              target="_blank" rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Lecturer System</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">Desktop Management</span>
+            <p class="project-desc">An administrative tool built to manage academic staff data, scheduling, and
+              departmental organisation.</p>
+            <div class="project-stack">
+              <span class="tag">C#</span><span class="tag">.NET</span>
+            </div>
+            <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Lecturer-system.git"
+              target="_blank" rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-top">
+              <span class="project-name">Garden</span>
+              <span class="status"><span class="dot"></span>deployed</span>
+            </div>
+            <span class="project-type">Web Application</span>
+            <p class="project-desc">A web-based tracking application focused on environmental data and plant management
+              logistics.</p>
+            <div class="project-stack">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+            <a class="project-link" href="https://github.com/KamvelihleAthabileDyantyi17/Garden.git" target="_blank"
+              rel="noopener">
+              View repository
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certs">
+        <div class="section-head">
+          <span class="section-tag">04 — verified credentials</span>
+          <div class="section-rule"></div>
+        </div>
+        <div class="timeline">
+
+          <div class="cert">
+            <div class="cert-head">
+              <span class="cert-name">Microsoft Applied Skills: Get started with Azure management tasks</span>
+              <span class="cert-date">JUL 2026</span>
+            </div>
+            <div class="cert-issuer">Microsoft · <span class="ref">Credential ID: 13DC867260DD93CD</span></div>
+            <p class="cert-learn">Demonstrated practical ability to navigate the Azure portal, configure resource
+              groups, and perform foundational cloud administration and management tasks.</p>
+          </div>
+
+          <div class="cert">
+            <div class="cert-head">
+              <span class="cert-name">Claude 101</span>
+              <span class="cert-date">2026</span>
+            </div>
+            <div class="cert-issuer">Anthropic · <span class="ref">Claude101.pdf</span></div>
+            <p class="cert-learn">Explored the unique capabilities of the Claude model, focusing on complex reasoning
+              tasks and leveraging large context windows for software documentation and debugging.</p>
+          </div>
+
+          <div class="cert">
+            <div class="cert-head">
+              <span class="cert-name">Microsoft Certified: Azure AI Fundamentals</span>
+              <span class="cert-date">APR 2026</span>
+            </div>
+            <div class="cert-issuer">Microsoft · <span class="ref">AI900.png</span></div>
+            <p class="cert-learn">Mastered the basics of Machine Learning, Computer Vision, and Natural Language
+              Processing on the Azure platform, with the ability to design and implement AI workloads using cloud-native
+              services.</p>
+          </div>
+
+          <div class="cert">
+            <div class="cert-head">
+              <span class="cert-name">Oracle Cloud Infrastructure Foundations Associate</span>
+              <span class="cert-date">FEB 2026</span>
+            </div>
+            <div class="cert-issuer">Oracle University · <span class="ref">OCI.pdf</span></div>
+            <p class="cert-learn">Gained a deep understanding of core cloud concepts, including Virtual Cloud Networks
+              (VCN), Identity and Access Management (IAM), and the architectural differences between Compute, Storage,
+              and Autonomous Databases.</p>
+          </div>
+
+          <div class="cert">
+            <div class="cert-head">
+              <span class="cert-name">Certificate in Full Stack Development</span>
+              <span class="cert-date">2025</span>
+            </div>
+            <div class="cert-issuer">FNB App Academy / IT Varsity · <span class="ref">FNB Cert_page-0001.pdf</span>
+            </div>
+            <p class="cert-learn">Completed a rigorous 32-credit program covering the entire SDLC, UX/UI design
+              principles, API development, and business development for software startups.</p>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CONTACT -->
+    <footer id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <h2>Let's build something.</h2>
+            <p>Open to opportunities in software development, cloud engineering, and applied AI. Reach out below.</p>
+          </div>
+          <div class="social-list">
+            <a href="https://github.com/KamvelihleAthabileDyantyi17" target="_blank" rel="noopener"><span
+                class="label">GitHub</span> KamvelihleAthabileDyantyi17</a>
+            <a href="https://www.linkedin.com/in/kamvelihle-dyantyi-dev" target="_blank" rel="noopener"><span
+                class="label">LinkedIn</span> www.linkedin.com/in/kamvelihle-dyantyi-dev</a>
+            <a href="mailto:kdyntyi@gmail.com" target="_blank" rel="noopener"><span class="label">Email</span>
+              kdyntyi@gmail.com</a>
+            <a href="tel:+27634149616" target="_blank" rel="noopener"><span class="label">Number</span> +27 63 414
+              9616</a>
+
+          </div>
+        </div>
+        <p class="foot-note">// Kamvelihle Athabile Dyantyi — Software Developer &amp; Cloud Enthusiast</p>
+      </div>
+    </footer>
+  </main>
 
 </body>
+
 </html>
