@@ -400,6 +400,15 @@
     position:relative;
     padding-bottom: 34px;
   }
+.cert-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;   /* This is the magic word that stops the cropping */
+  border-radius: 6px; 
+  margin-top: 15px; 
+  border: 1px solid #333;
+}
+
   .cert:last-child{ padding-bottom: 0; }
   .cert::before{
     content:'';
